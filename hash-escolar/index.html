@@ -33,49 +33,51 @@
 
     <div class="main-container">
         <div class="main wrapper clearfix">
-            <p>
-                Insira um número para calcular a sua hash
-            </p>
+            <article>
+                <h2>Como calcular uma hash manualmente</h2>
+                <ul>
+                    <li>Insira um número na calculadora</li>
+                    <li>Pressione o botão de raiz quadrada 5 vezes</li>
+                    <li>Copie os primeiros 6 dígitos depois da vírgula que não são 0</li>
+                    <li>Ordene os dígitos</li>
+                </ul>
 
+                <h4>Exemplo para o número 5638</h4>
+                <ul>
+                    <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,309853299712274</li>
+                    <li>Os primeiros dígitos depois da vírgula que não são 0 são 398532</li>
+                    <li>Ordenando os dígitos, obtemos 233589. Esta é a hash do número 5638</li>
+                </ul>
 
-            <form action="javascript:calcular()">
-                <input type="number" id="numero" step="0.01">
-                <input type="submit">
-            </form>
+                <h4>Exemplo para o número 654</h4>
+                <ul>
+                    <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,224578991764701</li>
+                    <li>Os primeiros dígitos depois da vírgula que não são 0 são 224578</li>
+                    <li>A hash já está ordenada. 224578 é a hash do número 654</li>
+                </ul>
 
-            <p id="resultado">
-                <br/>
-                <br/>
-            </p>
+                <h4>Exemplo para o número 4987231549</h4>
+                <ul>
+                    <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 2,009361655455197</li>
+                    <li>Os primeiros dígitos depois da vírgula que não são 0 são 936165</li>
+                    <li>Ordenando os dígitos, obtemos 135669. Esta é a hash do número 4987231549</li>
+                </ul>
+            </article>
+            <aside>
+                <p>
+                    Insira um número para calcular a sua hash
+                </p>
 
-            <h2>Como calcular uma hash</h2>
-            <ul>
-                <li>Insira um número na calculadora</li>
-                <li>Pressione o botão de raiz quadrada 5 vezes</li>
-                <li>Copie os primeiros 6 dígitos depois da vírgula que não são 0</li>
-                <li>Ordene os dígitos</li>
-            </ul>
+                <form action="javascript:calcular()">
+                    <input type="number" id="numero" step="0.01" required>
+                    <input type="submit">
+                </form>
 
-            <h4>Exemplo para o número 5638</h4>
-            <ul>
-                <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,309853299712274</li>
-                <li>Os primeiros dígitos depois da vírgula que não são 0 são 398532</li>
-                <li>Ordenando os dígitos, obtemos 233589. Esta é a hash do número 5638</li>
-            </ul>
-
-            <h4>Exemplo para o número 654</h4>
-            <ul>
-                <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,224578991764701</li>
-                <li>Os primeiros dígitos depois da vírgula que não são 0 são 224578</li>
-                <li>A hash já está ordenada. 224578 é a hash do número 654</li>
-            </ul>
-
-            <h4>Exemplo para o número 4987231549</h4>
-            <ul>
-                <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 2,009361655455197</li>
-                <li>Os primeiros dígitos depois da vírgula que não são 0 são 936165</li>
-                <li>Ordenando os dígitos, obtemos 135669. Esta é a hash do número 4987231549</li>
-            </ul>
+                <p id="resultado">
+                    <br/>
+                    <br/>
+                </p>
+            </aside>
         </div>
         <!-- #main -->
     </div>
