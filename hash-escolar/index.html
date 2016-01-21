@@ -1,68 +1,93 @@
-<html>
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
 
 <head>
-    <style type="text/css">
-        body {
-            font-family: Helvetica, Arial, sans-serif
-        }
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hashes escolares</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 
 <body>
-    <script src="script.js"></script>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-    <h1>
-    Hashes facilmente calculáveis para confirmação de resultados escolares
-    </h1>
+    <div class="header-container">
+        <header class="wrapper clearfix">
+            <h1 class="title">Hashes facilmente calculáveis para confirmação de resultados escolares</h1>
+        </header>
+    </div>
 
-    <p>
-        Insira um número para calcular a sua hash
-    </p>
+    <div class="main-container">
+        <div class="main wrapper clearfix">
+            <p>
+                Insira um número para calcular a sua hash
+            </p>
 
 
-    <form action="javascript:calcular()">
-        <input type="number" id="numero" step="0.01">
-        <input type="submit">
-    </form>
+            <form action="javascript:calcular()">
+                <input type="number" id="numero" step="0.01">
+                <input type="submit">
+            </form>
 
-    <p id="resultado">
-        <br/>
-        <br/>
-    </p>
+            <p id="resultado">
+                <br/>
+                <br/>
+            </p>
 
-    <h2>
-      Como calcular uma hash
-    </h2>
-    <ul>
-        <li>Insira um número na calculadora</li>
-        <li>Pressione o botão de raiz quadrada 5 vezes</li>
-        <li>Copie os primeiros 6 dígitos depois da vírgula que não são 0</li>
-        <li>Ordene os dígitos</li>
-    </ul>
+            <h2>Como calcular uma hash</h2>
+            <ul>
+                <li>Insira um número na calculadora</li>
+                <li>Pressione o botão de raiz quadrada 5 vezes</li>
+                <li>Copie os primeiros 6 dígitos depois da vírgula que não são 0</li>
+                <li>Ordene os dígitos</li>
+            </ul>
 
-    <h4>
-      Exemplo para o número 5638
-    </h4>
-    <ul>
-        <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,309853299712274</li>
-        <li>Os primeiros dígitos depois da vírgula que não são 0 são 398532</li>
-        <li>Ordenando os dígitos, obtemos 233589. Esta é a hash do número 5638</li>
-    </ul>
+            <h4>Exemplo para o número 5638</h4>
+            <ul>
+                <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,309853299712274</li>
+                <li>Os primeiros dígitos depois da vírgula que não são 0 são 398532</li>
+                <li>Ordenando os dígitos, obtemos 233589. Esta é a hash do número 5638</li>
+            </ul>
 
-    <h4>
-      Exemplo para o número 654
-    </h4>
-    <ul>
-        <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,224578991764701</li>
-        <li>Os primeiros dígitos depois da vírgula que não são 0 são 224578</li>
-        <li>A hash já está ordenada. 224578 é a hash do número 654</li>
-    </ul>
+            <h4>Exemplo para o número 654</h4>
+            <ul>
+                <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,224578991764701</li>
+                <li>Os primeiros dígitos depois da vírgula que não são 0 são 224578</li>
+                <li>A hash já está ordenada. 224578 é a hash do número 654</li>
+            </ul>
 
-    <h4>
-      Exemplo para o número 4987231549
-    </h4>
-    <ul>
-        <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 2,009361655455197</li>
-        <li>Os primeiros dígitos depois da vírgula que não são 0 são 936165</li>
-        <li>Ordenando os dígitos, obtemos 135669. Esta é a hash do número 4987231549</li>
-    </ul>
+            <h4>Exemplo para o número 4987231549</h4>
+            <ul>
+                <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 2,009361655455197</li>
+                <li>Os primeiros dígitos depois da vírgula que não são 0 são 936165</li>
+                <li>Ordenando os dígitos, obtemos 135669. Esta é a hash do número 4987231549</li>
+            </ul>
+        </div>
+        <!-- #main -->
+    </div>
+    <!-- #main-container -->
+
+    <div class="footer-container">
+        <footer class="wrapper">
+            <h3><a href="https://github.com/muthdra">Gabriel Kwiecinski Antunes @ GitHub</a></h3>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
