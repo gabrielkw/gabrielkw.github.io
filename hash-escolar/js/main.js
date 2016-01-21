@@ -17,17 +17,24 @@ function ordenar_hash(numero){
     return hash
 }
 
-function calcular() {
-    numero_input = document.getElementById("numero")
-    numero = numero_input.value
-    numero_input.value = ""
-    
+function calcular(numero) {
     hash = numero
     hash = raiz_quadrada_cinco_vezes(hash)
     hash = seis_numeros_depois_da_virgula(hash)
     hash = ordenar_hash(hash)
     
     if (hash == "") hash = "0"
+   
+    return hash
+}
+
+function imprimir_resultado(){
+    numero_input = document.getElementById("numero")
+    numero = numero_input.value
+    numero_input.value = ""
+    
+    hash = calcular(numero)
+    
     resultado = document.getElementById("resultado")
     resultado.innerHTML = "A hash do número " + numero + " é: </br>" + hash
     
