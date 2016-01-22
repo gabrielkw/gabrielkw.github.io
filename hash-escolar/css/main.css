@@ -160,11 +160,17 @@ nav a:hover {
     font-weight: normal;
 }
 
+.exercicios{
+    font-family: monospace
+}
+
+#calculadora input[type="number"]{
+    width:100%;
+}
+
 aside input{
     color: black;
 }
-
-
 
 
 

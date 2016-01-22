@@ -17,8 +17,11 @@ function ordenar_hash(numero){
     return hash
 }
 
-function calcular(numero) {
+function calcular(numero,senha) {
     hash = numero
+    if(senha > 1){
+        hash *= senha
+    }
     hash = raiz_quadrada_cinco_vezes(hash)
     hash = seis_numeros_depois_da_virgula(hash)
     hash = ordenar_hash(hash)
@@ -33,7 +36,13 @@ function imprimir_resultado(){
     numero = numero_input.value
     numero_input.value = ""
     
-    hash = calcular(numero)
+    senha = 0
+    senha_input = document.getElementById("senha")
+    if(senha_input != ""){
+        senha = senha_input.value
+    }
+    
+    hash = calcular(numero,senha)
     
     resultado = document.getElementById("resultado")
     resultado.innerHTML = "A hash do número " + numero + " é: </br>" + hash
