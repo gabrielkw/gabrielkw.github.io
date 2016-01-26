@@ -46,7 +46,7 @@ speech.maxAlternatives = 3;
 speech.continuous = true;
 speech.interimResults = true;
 
-function ativar(){
+function ativar() {
 	console.log("Ativando reconhecimento");
 	micImg.src = "mic_inativo.png";
 	speech.start();
@@ -90,7 +90,7 @@ speech.onstart = function(){
 	state = "on";
 }
 
-speech.onresult = function(event) {
+speech.onresult = function(event){
 
 	var resultados = event.results[event.resultIndex];
 	transcricao = resultados[0]["transcript"];
