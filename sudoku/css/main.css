@@ -189,6 +189,10 @@ tr:nth-child(3n) td {
     margin: 0 auto;
 }
 
+#credito {
+    text-align: right;
+}
+
 article {
     margin-bottom: 15px;
 }
