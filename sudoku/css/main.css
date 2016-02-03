@@ -198,6 +198,10 @@ footer a {
     text-decoration: none;
 }
 
+aside a {
+    color: white;
+}
+
 
 /* ==========================================================================
    Media Queries

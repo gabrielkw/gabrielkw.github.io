@@ -34,118 +34,150 @@
         <div class="main wrapper clearfix">
 
             <article>
-                <table>
-                    <tr>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                    </tr>
-                    <tr>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                    </tr>
-                    <tr>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                    </tr>
-                    <tr>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                    </tr>
-                    <tr>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                    </tr>
-                    <tr>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                    </tr>
-                    <tr>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                    </tr>
-                    <tr>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                    </tr>
-                    <tr>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                        <td> x </td>
-                    </tr>
-                </table>
-                <div id="controles">
-                    <input type="button" value="Reiniciar" onclick="preencher(puzzle)" />
-                    <input type="button" value="Original" onclick="gerar_original()" />
-                    <input type="button" value="Mais jogos" onclick="gerar(17)" />
-                    <input type="button" value="Checar resposta" onclick="checar_resposta()" />
-                </div>
+                <header>
+                    <blockquote>
+                        Sudoku é um quebra-cabeça baseado na colocação lógica de números. O objetivo do jogo é a colocação de números de 1 a 9 em cada uma das células vazias numa grade de 9x9, constituída por 3x3 subgrades chamadas regiões. Cada coluna, linha e região só pode ter um número de cada um dos 1 a 9.
+                        <sup>
+                            (via <a href = "https://pt.wikipedia.org/wiki/Sudoku">Wikipédia</a>)
+                        </sup>
+                    </blockquote>
+                    <p>Este jogo específico foi calculado pelo matemático finlandês Arto Inkala com o único objetivo de ser difícil de resolver.</p>
+                </header>
+                <section>
+                    <table>
+                        <tr>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                        </tr>
+                        <tr>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                        </tr>
+                        <tr>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                        </tr>
+                        <tr>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                        </tr>
+                        <tr>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                        </tr>
+                        <tr>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                        </tr>
+                        <tr>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                        </tr>
+                        <tr>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                        </tr>
+                        <tr>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                            <td> x </td>
+                        </tr>
+                    </table>
+                    <div id="controles">
+                        <input type="button" value="Recomeçar" onclick="preencher(puzzle)" />
+                        <input type="button" value="Checar resposta" onclick="checar_resposta()" />
+                        <input type="button" value="Mais jogos difíceis" onclick="gerar(17)" />
+                        <input type="button" value="Original" onclick="gerar_original()" />
+                    </div>
+                </section>
+                <section>
+                    <p>
+                        Arto Inkala disse que, em uma classificação de dificuldade onde 1 estrela significa fácil e 5 estrelas significa muito difícil, este quebra-cabeça tiraria 11.
+                    </p>
+                    <p>
+                        Você consegue resolver?
+                    </p>
+                </section>
             </article>
 
             <aside>
-                <h3>aside</h3>
-                <p>Este jogo específico foi calculado por Arto Inkala com o único objetivo de ser difícil de resolver</p>
+                <h3>Dicas e truques para Sudoku</h3>
+                <ul>
+                    <li>
+                        <a href="https://www.geniol.com.br/logica/sudoku/tutorial/">Como Jogar Sudoku - Geniol</a>
+                    </li>
+                    <li>
+                        <a href="http://www.sudoku.com/?lang=pt">GameHouse Sudoku</a>
+                    </li>
+                    <li>
+                        <a href="horadosudoku.blogspot.com.br/2010/01/tecnicas-avancadas-i.html">Técnicas Avançadas I - Hora do Sudoku!</a>
+                    </li>
+                    <li>
+                        <a href="http://horadosudoku.blogspot.com.br/2010/01/tecnicas-avancadas-ii.html">Técnicas Avançadas II - Hora do Sudoku!</a>
+                    </li>
+                </ul>
 
             </aside>
 

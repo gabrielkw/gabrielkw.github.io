@@ -50,10 +50,14 @@ function validar() {
 }
 
 function checar_resposta() {
-    if (validar()) {
-        alert('certo');
+    if (getEstado() == puzzle) {
+        alert("Você ainda não começou a resolver o quebra-cabeça. Clique em uma célula vazia e preencha usando o teclado.");
     } else {
-        alert('errado');
+        if (validar()) {
+            alert("Parabéns! Você conseguiu completar um dos jogos mais difíceis de Sudoku que existem e tudo o que você ganhou foi este pop-up idiota.");
+        } else {
+            alert("Esta não é a resposta certa. Continue tentando.");
+        }
     }
 }
 
