@@ -28,7 +28,7 @@
 
 ---
 ## Open Source
-#### [GitHub](http://github.com.com)
+#### [GitHub](http://github.com/muthdra)
 Vários projetos de programação e matemática 
 
 ---
@@ -42,4 +42,3 @@ GNOME Terminal
 
 ---
 [avatar]: https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-xaf1/v/t1.0-9/1798499_10200733002245888_686568279_n.jpg?oh=fb70b61ddb825087899aa2b54087734d&oe=5730D254&__gda__=1462143199_3d5ff03611af46a324a49714a95708d4
-[homepage]: http://github.com/muthdra
