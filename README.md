@@ -3,7 +3,7 @@
 ---
 
 > #### Cientista da Computação
-> #####  Chapecó - SC &emsp; [github.com/muthdra][homepage]
+> #####  Chapecó - SC &emsp; [homepage](http://github.com/muthdra)
 
 ---
 > **"** Estudante de Ciência da Computação, programador e desenvolvedor de sistemas
