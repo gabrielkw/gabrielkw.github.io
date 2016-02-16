@@ -11,18 +11,33 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/style.css">
 
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 </head>
 
 <body>
-    <!--[if lt IE 8]>
+    <div id="container">
+        <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-    <h1>tangerinebox</h1>
+        <h1>tangerinebox</h1>
+        <p>A collection of tools written in JavaScript</p>
 
-    <script src="js/main.js"></script>
+        <form action="javascript:submitConsole()">
+            <input type="text" id="tconsole" autofocus />
+        </form>
+        <div id="toolContainer">
+            <div id="toolView">
+                <p>Tools!</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vendor/jscolor.min.js"></script>
+    <script src="js/tools/lib.js"></script>
+    <script src="js/tools/functions.js"></script>
 </body>
 
 </html>
