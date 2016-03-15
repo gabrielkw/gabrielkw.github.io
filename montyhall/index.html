@@ -1,0 +1,81 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title> Portas, paradoxos e probabilidade </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div id="container">
+        <p id="credit">
+            <a href="http://muthdra.github.io/"><img src="img/git.png" height="28px"> muthdra.github.io</a>
+        </p>
+        <h1 class="titulo">
+            Portas, paradoxos e probabilidade
+        </h1>
+
+        <p class="legenda">O problema de Monty Hall, adaptado para audiências brasileiras</p>
+
+        <div class="texto">
+            <p>
+                Imagine que você foi convidado a participar de um jogo no programa do Bozo. O apresentador apresenta-lhe três portas, A, B e C. Atrás de uma delas há um carro que será seu se você escolher a porta certa. Digamos que você escolha a porta A. Após a sua escolha, é a vez do apresentador abrir uma das portas que não guardam o prêmio. Digamos que ele tenha aberto a porta C e mostrado que ela está, de fato, vazia. Neste momento, você recebe uma opção:
+            </p>
+            <p class="citacao">
+                “Você prefere trocar de porta ou continuar com a escolha que você fez no início do jogo?”
+            </p>
+            <p>
+                Qual seria a melhor estratégia? Quando o jogo começou, você tinha cerca de 33% de chance de acertar a porta a partir de uma escolha aleatória. Mas e agora, que só restam duas portas?
+            </p>
+            <p>
+                Intuitivamente, a resposta é que não faz diferença. As chances parecem ser de 50% para qualquer uma das portas. Mas isto não é verdade. A estratégia dominante é <strong>sempre trocar de porta</strong>. Vamos descobrir o motivo.
+            </p>
+        </div>
+        <div id="simulator">
+            <h2>
+            Bozo Simulator
+        </h2>
+            <form id="formulario" onsubmit="simular(); return false;">
+                <p>
+                    <input type="checkbox" name="ia" checked> Estratégia otimizada <sup>(jogador sempre troca de porta)</sup>
+                </p>
+                <p>
+                    <input type="checkbox" name="log"> Gerar relatório <sup>(pode causar lentidão)</sup>
+                </p>
+                <p>
+                    <input type="number" name="portas" value="3"> Quantidade de portas
+                </p>
+                <p>
+                    <input type="number" name="jogos" value="500"> Número de jogos
+                </p>
+                <button type="submit">Simular</button>
+            </form>
+            <p id="resultado"></p>
+
+            <div id="log_title">
+                <h3>
+                Relatório
+        </h3>
+            </div>
+            <p id="log"></p>
+        </div>
+        <footer>
+            <p class="the-algorithm">We did not invent the algorithm. The algorithm consistently finds Jesus. The algorithm killed Jeeves. The algorithm is banned in China. The algorithm is from Jersey. The algorithm constantly finds Jesus. This is not the algorithm. This is close.</p>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
