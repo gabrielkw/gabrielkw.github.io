@@ -83,8 +83,24 @@ body {
     line-height: 33.1833px;
 }
 
-.citacao {
+blockquote {
     font-style: italic;
+    border-left: 2px solid black;
+    padding-left: 15px;
+    margin-left: -10px;
+}
+
+blockquote:before {
+    content: open-quote;
+}
+blockquote:after {
+    content: close-quote;
+}
+
+.quote-author{
+    margin-top: -17px;
+    margin-left: 15px;
+    font-weight: bold;
 }
 
 #container {
