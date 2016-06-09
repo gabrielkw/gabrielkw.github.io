@@ -56,34 +56,26 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+body {}
 
-
-
-
-
-
-
-
-
-
-
-
+#container {
+    padding: 10px;
+    margin: 0 auto;
+    width: 400px;
+}
 
 
 /* ==========================================================================
    Media Queries
    ========================================================================== */
 
-@media only screen and (min-width: 35em) {
-
-}
+@media only screen and (min-width: 35em) {}
 
 @media print,
-       (-o-min-device-pixel-ratio: 5/4),
-       (-webkit-min-device-pixel-ratio: 1.25),
-       (min-resolution: 120dpi) {
+(-o-min-device-pixel-ratio: 5/4),
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 120dpi) {}
 
-}
 
 /* ==========================================================================
    Helper classes
@@ -133,6 +125,7 @@ textarea {
     *zoom: 1;
 }
 
+
 /* ==========================================================================
    Print styles
    ========================================================================== */
@@ -146,51 +139,41 @@ textarea {
         box-shadow: none !important;
         text-shadow: none !important;
     }
-
     a,
     a:visited {
         text-decoration: underline;
     }
-
     a[href]:after {
         content: " (" attr(href) ")";
     }
-
     abbr[title]:after {
         content: " (" attr(title) ")";
     }
-
     a[href^="#"]:after,
     a[href^="javascript:"]:after {
         content: "";
     }
-
     pre,
     blockquote {
         border: 1px solid #999;
         page-break-inside: avoid;
     }
-
     thead {
         display: table-header-group;
     }
-
     tr,
     img {
         page-break-inside: avoid;
     }
-
     img {
         max-width: 100% !important;
     }
-
     p,
     h2,
     h3 {
         orphans: 3;
         widows: 3;
     }
-
     h2,
     h3 {
         page-break-after: avoid;
