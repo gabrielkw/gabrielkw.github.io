@@ -10,7 +10,7 @@ function preencher(str) {
         } else {
             cell.style.fontWeight = "normal";
             cell.contentEditable = "true";
-            cell.textContent = ""
+            cell.textContent = "";
         }
     }
 }
@@ -31,7 +31,7 @@ function getEstado() {
     var cells = document.getElementsByTagName("td");
     var str = "";
     for (var i = 0; i < cells.length; i++) {
-        if (cells[i].textContent != "") {
+        if (cells[i].textContent !== "") {
             str += cells[i].textContent;
 
         } else {
@@ -61,7 +61,7 @@ function checar_resposta() {
     }
 }
 
-var puzzle_original = "8..........36......7..9.2...5...7.......457.....1...3...1....68..85...1..9....4.."
+var puzzle_original = "8..........36......7..9.2...5...7.......457.....1...3...1....68..85...1..9....4..";
 var puzzle = puzzle_original;
 var resposta = sudoku.solve(puzzle);
 

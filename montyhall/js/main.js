@@ -6,6 +6,7 @@ function simular() {
     var jogos = formulario.elements["jogos"].value;
     var saida = "";
     var vitorias = 0;
+    var porta_fechada;
 
     if (jogos > 1000 && log) {
         alert("Você não pode gerar relatórios de mais de 1000 jogos.");
@@ -21,7 +22,7 @@ function simular() {
             porta_fechada = porta_do_premio;
         } else {
             do {
-                var porta_fechada = Math.floor(Math.random() * portas);
+                porta_fechada = Math.floor(Math.random() * portas);
             } while (porta_fechada == porta_do_premio || porta_fechada == porta_escolhida);
         }
 
