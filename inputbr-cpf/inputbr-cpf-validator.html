@@ -1,0 +1,101 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../iron-validator-behavior/iron-validator-behavior.html">
+
+<script>
+  Polymer({
+    is: 'inputbr-cpf-validator',
+    behaviors: [
+      Polymer.IronValidatorBehavior
+    ],
+    validate: function(value) {
+      var validCpfRegex = /^[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}$/;
+      if(value === true){
+        return false; // This is just bad craftsmanship. The point is that if
+        // the "value" variable is NOT valid in the HTML's <input> opinion, our
+        // validator here gets a Boolean true for a value. Let's return a Boolean
+        // false when that happens because we need a String, not a Boolean, so
+        // we're not validating it.
+      } else if(value.match(validCpfRegex)) {
+        // If <input> thinks everything's OK, we get a String. Let's check 
+        // if it contains the valid document logic from now on.
+
+        // First, we divide and categorize the numbers inside the String.
+
+        var splittedValue = value.split("-");
+
+        // This line removes all dots and splits the first 9 digits into
+        // an Array of 1-character-long Strings
+        var firstDigits = splittedValue[0].replace('.', '').replace('.', '').split('');
+
+        // last2Digits are the last 2 digits after the dash, splitted into
+        // an Array of 1-character-long Strings
+        var last2Digits = splittedValue[1].split('');
+
+        var sumOfTheFirstDigits = 0; // This will increase in the loop.
+        var i;
+        for(i=0; i<9; i++){
+          // Remember that Arrays start on 0, not on 1. This loop should not
+          // go beyond 8.
+          var singleDigit = parseInt(firstDigits[i]);
+          sumOfTheFirstDigits += (parseInt(singleDigit)*(10-i));
+        }
+
+        // Second, we check the two last digits: the validation digits.
+
+        // BEGINNING OF HARD PART
+
+        // There are two validation digits. They are the ones that come right
+        // after the dash, at the end. We can predict what they should be from
+        // the first 9 numbers. Let's check if the validation digits are
+        // properly filled.
+
+        var hashOfTheFirstValidationDigit = ((sumOfTheFirstDigits*10)%11);
+        // If the result of the first digit hash is more than 9, consider it 0.
+        if(hashOfTheFirstValidationDigit > 9){
+          hashOfTheFirstValidationDigit = 0;
+        }
+
+        // From now on, we consider hashOfTheFirstValidationDigit as another digit.
+        // Be careful with the polymorphism here.
+        firstDigits.push(hashOfTheFirstValidationDigit);
+
+        // We changed the firstDigits Array so we don't know the 
+        // correct sumOfTheFirstDigits anymore.
+        sumOfTheFirstDigits = 0;
+        
+        // Let's calculate it.
+        for(i=0; i<10; i++){
+          // Remember that Arrays start on 0, not on 1. This loop should not
+          // go beyond 9.
+          var singleDigit = parseInt(firstDigits[i]);
+          sumOfTheFirstDigits += (parseInt(singleDigit)*(11-i));
+        }
+
+        var hashOfTheSecondValidationDigit = ((sumOfTheFirstDigits*10)%11);
+        if(hashOfTheSecondValidationDigit > 9){
+          hashOfTheSecondValidationDigit = 0;
+        }
+        // I'm repeating myself. But one-time code redundancy is actually
+        // better than the complexity of the data that a looping implementation
+        // would need here.
+
+        if(parseInt(last2Digits[0]) === hashOfTheFirstValidationDigit && parseInt(last2Digits[1]) === hashOfTheSecondValidationDigit){
+          // This is the only way to make this validator return true: after
+          // the code checked the type of data for a String, matched it to a
+          // specific Regular Expression and compared the last two digits
+          // of the input with their expected values.
+          return true;
+        } else {
+          return false;
+        }
+        // END OF HARD PART
+      } else {
+        // If the String is not matching the regex, we just return false.
+        // I mean technically the <input> element should take care of that
+        // but it's availability is very unpredictable and not relying on it
+        // is cheap enough. It's not a Polyfill. Shut up, Dinculescu.
+        return false;
+      }
+    }
+  });
+</script>

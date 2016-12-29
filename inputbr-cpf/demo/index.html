@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>inputbr-cpf demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../../iron-dropdown/iron-dropdown.html">
+    <link rel="import" href="../../iron-input/iron-input.html">
+    <link rel="import" href="../../paper-fab/paper-fab.html">
+    <link rel="import" href="../../paper-input/paper-input.html">
+    <link rel="import" href="../../paper-button/paper-button.html">
+    <link rel="import" href="../inputbr-cpf.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic inputbr-cpf demo</h3>
+      <demo-snippet>
+        <template>
+          <script>
+            function validate1(){
+              var cpf1 = document.getElementById('cpf1');
+              var result = cpf1.validate(cpf1.value);
+              alert(result);
+            }
+          </script>
+
+          <div style="border-bottom:2px solid black">
+            <inputbr-cpf
+              id="cpf1"
+              class="paper-input-input"></inputbr-cpf>
+          </div>
+          <paper-button
+              raised
+              onclick="validate1()">
+            Alert validation!
+          </paper-button>
+        </template>
+      </demo-snippet>
+
+      <h3>Use paper-input-container for best results</h3>
+      <demo-snippet>
+        <template>
+          <paper-input-container auto-validate attr-for-value="value">
+            <label>CPF</label>
+            <inputbr-cpf id="cpf2" class="paper-input-input"></inputbr-cpf>
+            <paper-input-error>
+              Insira um CPF válido!
+            </paper-input-error>
+          </paper-input-container>
+        </template>
+      </demo-snippet>
+
+      <h3>This one doesn't auto-validate. You have to ask it.</h3>
+      <demo-snippet>
+        <template>
+          <script>
+            function validate3(){
+              var cpf3container = document.getElementById('cpf3container');
+              var cpf3 = document.getElementById('cpf3');
+              cpf3container.invalid = !cpf3.validate(cpf3.value);
+            }
+          </script>
+          <paper-input-container
+              id="cpf3container"
+              attr-for-value="value">
+            <label>CPF</label>
+            <inputbr-cpf
+              id="cpf3"
+              is="iron-input"
+              class="paper-input-input"></inputbr-cpf>
+            <paper-input-error>
+              Insira um CPF válido!
+            </paper-input-error>
+          </paper-input-container>
+          <paper-button
+              raised
+              onclick="validate3()">
+            Validar
+          </paper-button>
+        </template>
+      </demo-snippet>
+
+
+      <h3>This is proper behavior.</h3>
+      <demo-snippet>
+        <template>
+          <script>
+            function validate4(){
+              var cpf4container = document.getElementById('cpf4container');
+              var cpf4 = document.getElementById('cpf4');
+              cpf4container.invalid = !cpf4.validate(cpf4.value);
+
+              // Turn on the auto-validation if invalid.
+              // Turn off otherwise. It's just cosmetic.
+              // It should know when it's corrected but
+              // it shouldn't annoy you during the
+              // process of changing an already validated
+              // number into another valid one.
+              cpf4container.autoValidate = cpf4container.invalid;
+            }
+          </script>
+          <paper-input-container
+              id="cpf4container"
+              attr-for-value="value">
+            <label>CPF</label>
+            <inputbr-cpf
+              id="cpf4"
+              is="iron-input"
+              class="paper-input-input"></inputbr-cpf>
+            <paper-input-error>
+              Insira um CPF válido!
+            </paper-input-error>
+          </paper-input-container>
+          <paper-button
+            raised
+            onclick="validate4()">Validar</paper-button>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <style>
+      #help{
+        background-color: white;
+        box-shadow: 0.2vw 0.2vh 0.5vw rgba(0,0,0,0.4);
+        padding-right: 1em;
+        padding-left: 1em;
+      }
+      #fabcontainer{
+        position: fixed;
+        right: 1em;
+        bottom: 1em;
+      }
+    </style>
+    <script>
+      function openHelp(){
+        document.getElementById('help').open();
+      }
+    </script>
+    <div id="fabcontainer">
+      <paper-fab
+        mini
+        label="?"
+        onclick="openHelp()"></paper-fab>
+      <iron-dropdown
+        id="help"
+        horizontal-align="right"
+        vertical-align="bottom">
+        <div class="dropdown-content">
+          <h4>Valid CPFs</h4>
+          <ul>
+            <p>
+              <i>
+               <li>987.654.321-<b>00</b></li>
+               <li>123.456.789-<b>09</b></li>
+               <li>321.321.321-<b>78</b></li>
+               <li>111.222.333-<b>96</b></li>
+              </i>
+            </p>
+            <p>
+              <li>425.381.571-53</li>
+              <li>541.324.743-56</li>
+              <li>137.248.656-94</li>
+              <li>113.682.740-48</li>
+              <li>787.315.293-64</li>
+              <li>136.268.110-50</li>
+            </p>
+          </ul>
+        </div>
+      </iron-dropdown>
+     </div>
+  </body>
+</html>
