@@ -39,5 +39,6 @@
   },
   "_source": "https://github.com/PolymerElements/iron-validator-behavior.git",
   "_target": "^1.0.1",
-  "_originalSource": "PolymerElements/iron-validator-behavior"
+  "_originalSource": "PolymerElements/iron-validator-behavior",
+  "_direct": true
 }
