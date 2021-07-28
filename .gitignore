@@ -1,7 +1,0 @@
-_STORE
-
-# Generated files/folders
-*.pyc
-app/css/*
-dist
-
