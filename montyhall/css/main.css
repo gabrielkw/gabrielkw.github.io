@@ -1,0 +1,96 @@
+body {
+    text-rendering: optimizelegibility;
+    font-feature-settings: "liga";
+}
+
+.titulo {
+    color: rgba(0, 0, 0, 0.8);
+    margin-bottom: 0;
+    font-weight: 700;
+    line-height: 41px;
+}
+
+.legenda {
+    color: rgba(0, 0, 0, 0.44);
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    font-size: 28px;
+    margin-top: 0;
+}
+
+.texto {
+    color: rgba(0, 0, 0, 0.8);
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 21px;
+    letter-spacing: -0.0666667px;
+    line-height: 33.1833px;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 2px solid black;
+    padding-left: 15px;
+    margin-left: -10px;
+}
+
+blockquote:before {
+    content: open-quote;
+}
+blockquote:after {
+    content: close-quote;
+}
+
+.quote-author{
+    margin-top: -17px;
+    margin-left: 15px;
+    font-weight: bold;
+}
+
+#container {
+    margin: 0 auto;
+    min-width: 200px;
+    max-width: 700px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+#credit {
+    font-size: 1.2em;
+    text-align: center;
+}
+
+#credit a {
+    color: cornflowerblue;
+    font-weight: lighter;
+    text-decoration: none;
+}
+
+#simulator {
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#simulator sup {
+    color: grey;
+}
+
+#log_title {
+    display: none;
+}
+
+#log {
+    display: none;
+    max-height: 500px;
+    overflow: scroll;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: lightgray;
+}
+
+.the-algorithm {
+    color: gray;
+    font-family: monospace;
+    font-size: 8px;
+    line-height: 10px;
+}

@@ -1,0 +1,133 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="">
+<!--<![endif]-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Hashes escolares</title>
+
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <header>
+            <h1>Hashes facilmente calculáveis para confirmação de resultados escolares</h1>
+        </header>
+    </div>
+
+    <div>
+        <aside>
+            <p>
+                Insira um número para calcular a sua hash
+            </p>
+
+            <form action="javascript:imprimir_resultado()" id="calculadora">
+                <ul>
+                    <li>
+                        <label>Número
+                    </label>
+                        <input type="number" id="numero" step="0.01" required/>
+                    </li>
+                    <li>
+                        <label>
+                        Senha (opcional)
+                    </label>
+                        <input type="number" id="senha" />
+                    </li>
+                </ul>
+                <input type="submit" value="Calcular" />
+            </form>
+
+            <p id="resultado">
+                <br/>
+                <br/>
+            </p>
+        </aside>
+        <article>
+            Confirmando respostas autonomamente em menos de 10 segundos.
+            <h2>O que são hashes?</h2>
+            <p>O objetivo de uma <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_hash">função hash</a> é confirmar a autenticidade de um pacote de informação (arquivos, imagens, senhas, números, etc). Uma função hash é uma <a href="https://pt.wikipedia.org/wiki/Fun%C3%A7%C3%A3o_de_m%C3%A3o_%C3%BAnica">função de mão única</a>: fácil de calcular para qualquer entrada mas difícil de inverter dada a imagem de uma entrada aleatória.</p>
+            <p>A função hash discutida aqui sempre retorna um número de 6 dígitos e divide o universo em 5004 grupos diferentes.</p>
+
+            <h2>A utilização de funções hash em salas de aula</h2>
+            <p>A vantagem da utilização de funções de mão única na confirmação de resultados escolares é a possibilidade de oferecer um método de checagem para a resposta do aluno sem mostrá-lo a solução dos exercícios.</p>
+            <p>Digamos que o aluno seja apresentado ao seguinte tema de casa:</p>
+            <blockquote class="exercicios">
+                <p>Calcule o resultado da expressão <i>5+7*4</i></p>
+                <blockquote>
+                    <p>hash para confirmação: <i>114558</i></p>
+                </blockquote>
+            </blockquote>
+            <p>Esta expressão pode causar confusão na resposta do aluno devido à <a href="https://pt.wikipedia.org/wiki/Ordem_de_opera%C3%A7%C3%B5es">ordem de operações</a>. Suponhamos que o aluno se confunda e chegue ao resultado incorreto 48 (que seria o resultado da expressão <i>(5+7)*4</i>). O aluno pode, então, com a ajuda de uma calculadora simples, calcular a hash de confirmação do resultado que ele obteve. Ele perceberá a hash calculada é <i>125689</i>, demonstrando um resultado incorreto.</p>
+            <p>Mesmo sabendo que não obteve êxito em sua tentativa, o aluno não conseguirá calcular a resposta certa a partir da hash apresentada no exercício.</p>
+            <p>Após uma análise mais profunda da questão, o aluno chega a resposta correta 33. Ao calcular a hash deste número, ele chega a 114558, confirmando o seu resultado.</p>
+
+            <h2>Senhas</h2>
+            <p>Imagine uma situação onde dois exercícios de dias diferentes possuem a mesma resposta. Isso faria com que as hashes dos dois exercícios fossem iguais e o aluno poderia inferir o resultado a partir disso. Senhas são a solução para isso.</p>
+            <p>Uma senha pode ser estabelecida de antemão se ela se fizer necessária. Essa senha vai fazer com que a hash seja ainda mais imprevisível.</p>
+            <p>Veja um exemplo onde dois exercícios com o mesmo resultado possuem hashes diferentes:</p>
+            <blockquote class="exercicios">
+                <p>1. Calcule o resultado da expressão <i>5²</i></p>
+                <blockquote>
+                    <p>senha da hash: <i>412</i></p>
+                    <p>hash para confirmação: <i>333457</i></p>
+                </blockquote>
+
+                <p>2. Calcule o resultado da expressão <i>6²-11</i></p>
+                <blockquote>
+                    <p>senha da hash: <i>7</i></p>
+                    <p>hash para confirmação: <i>114557</i></p>
+                </blockquote>
+            </blockquote>
+
+            <h2>Como calcular uma hash manualmente</h2>
+            <ul>
+                <li>Insira um número na calculadora</li>
+                <li>Multiplique-o pela senha, se ela existir (se não, não faça nenhuma multiplicação)</li>
+                <li>Pressione o botão de raiz quadrada 5 vezes</li>
+                <li>Copie os primeiros 6 dígitos depois da vírgula que não são 0</li>
+                <li>Ordene os dígitos</li>
+            </ul>
+
+            <h4>Exemplo para o número 5638</h4>
+            <ul>
+                <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,309853299712274</li>
+                <li>Os primeiros dígitos depois da vírgula que não são 0 são 398532</li>
+                <li>Ordenando os dígitos, obtemos 233589. Esta é a hash do número 5638</li>
+            </ul>
+
+            <h4>Exemplo para o número 654</h4>
+            <ul>
+                <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,224578991764701</li>
+                <li>Os primeiros dígitos depois da vírgula que não são 0 são 224578</li>
+                <li>A hash já está ordenada. 224578 é a hash do número 654</li>
+            </ul>
+
+            <h4>Exemplo para o número 4987231549</h4>
+            <ul>
+                <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 2,009361655455197</li>
+                <li>Os primeiros dígitos depois da vírgula que não são 0 são 936165</li>
+                <li>Ordenando os dígitos, obtemos 135669. Esta é a hash do número 4987231549</li>
+            </ul>
+            <h4>Exemplo para o número 2435 com a senha 54</h4>
+            <ul>
+                <li>Multiplique pela senha 54 para obter o número 131490</li>
+                <li>Pressione o botão de raiz quadrada 5 vezes para obter o número 1,445324610188779</li>
+                <li>Os primeiros dígitos depois da vírgula que não são 0 são 445324</li>
+                <li>Ordenando os dígitos, obtemos 234445. Esta é a hash do número 2435</li>
+            </ul>
+        </article>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
